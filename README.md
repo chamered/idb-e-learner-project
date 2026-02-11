@@ -59,10 +59,10 @@ that certifies his/her knowledge in relation to a specific `Course`.
 
 ---
 
-## Draft of the ER Schema 
+## 📄 Draft of the ER Schema 
+![draft-schema-er.drawio.png](draft-schema-er.drawio.png)
 
-
-## External Constraints 
+## ⚠️ External Constraints 
 The following section aims to illustrate some restrictions that cannot be represented in the ER Schema. 
 1. A `Professor` cannot enroll in its own `Course`
 2. A `Certificate` is automatically released upon the completion of a `Course` (meaning that all modules have been properly passed)
@@ -71,7 +71,7 @@ The following section aims to illustrate some restrictions that cannot be repres
 
 --- 
 
-## Glossary of Terms 
+## 📘 Glossary of Terms 
 
 | Nr. |     Term     |    Entity Type     |                                                             Additional Notes                                                              |
 |:---:|:------------:|:------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------:|
