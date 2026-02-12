@@ -16,6 +16,8 @@
   - [Overview](#-overview-)
     - [Users & Roles](#-users--roles-)
     - [Courses & Structures](#-courses--structure-)
+    - [Enrollment & Interaction](#-enrollment--interaction-)
+    - [Evaluation](#-evaluation-)
 - [Draft of the ER Schema](#draft-of-the-er-schema-)
 - [External Constraints](#external-constraints-)
 - [Glossary of Terms](#glossary-of-terms-)
