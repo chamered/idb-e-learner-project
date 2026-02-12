@@ -64,24 +64,22 @@ that certifies his/her knowledge in relation to a specific `Course`.
 
 ## ⚠️ External Constraints 
 The following section aims to illustrate some restrictions that cannot be represented in the ER Schema. 
-1. A `Professor` cannot enroll in its own `Course`
+1. A `Professor` cannot enroll in any `Course`
 2. A `Certificate` is automatically released upon the completion of a `Course` (meaning that all modules have been properly passed)
-3. A `Student` can submit an `Assignment` only if enrolled in the `Course`. 
-4. The number of `Students` that can enroll in a course is decided exclusively by the `Professor` teaching that `Course`.
+3. A `Student` can submit an `Assignment` only if enrolled in the `Course`.  
 
 --- 
 
 ## 📘 Glossary of Terms 
-
-| Nr. |     Term     |    Entity Type     |                                                             Additional Notes                                                              |
-|:---:|:------------:|:------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------:|
-| 1.  |    `User`     | ISA-Generalisation |                                A **user** of the platform. It can be either a `Student` or a `Professor`.                                 |
-| 2.  |   `Review`    |       Entity       |                                             A **feedback** that can be written by all users.                                              |
-| 3.  |   `Course`    |   Cyclic-Entity    |             A **course** may require the completion of a previous one in order to properly enroll for the subsequent course.              |
-| 4.  |  `Category`   |   Cyclic-Entity    |                       A **category** describes topics and subjects dealt in a course (it can have sub-categories).                        |
-| 5.  |   `Module`    |       Entity       |                                          A **module** is a set of lectures that forms a course.                                           |
-| 6.  |    `Exam`     |       Entity       |                                 **Exams** can be accessed when a module has been finished in the course.                                  |
-| 7.  |   `Lecture`   |       Entity       |                              An online **lecture** is a subset of a module, and is teached by one professor.                              |
-| 8.  |  `Resource`   | ISA-Generalisation | A **resource** is provided by the professor for the lectures. It can be either `Video` recordings, `Audio` tracks, or simple `Documents`. |
-| 9.  | `Assignment`  |       Entity       |                   An **assignment** is a task for a given course, that a student enrolled in such a course must submit.                   |
-| 10. | `Certificate` |    Weak-Entity     |                                A **certificate** is a document that certifies the completion of a course.                                 |
+| Nr. |     Term      |    Entity Type     |                                        Connections                                        |                                                             Additional Notes                                                              |
+| :-: | :-----------: | :----------------: |:-----------------------------------------------------------------------------------------:| :---------------------------------------------------------------------------------------------------------------------------------------: |
+| 1.  |    `User`     | ISA-Generalisation |                         `Assignment`, `Course` and `Certificate`                          |                                A **user** of the platform. It can be either a `Student` or a `Professor`.                                 |
+| 2.  |   `Review`    |       Entity       |                                          `User`                                           |                                             A **feedback** that can be written by all users.                                              |
+| 3.  |   `Course`    |   Cyclic-Entity    |  `Category`, `Professor`, `Student`, `Course`, `Module`,  `Certificate` and `Assignment`  |             A **course** may require the completion of a previous one in order to properly enroll for the subsequent course.              |
+| 4.  |  `Category`   |   Cyclic-Entity    |                                  `Category` and `Course`                                  |                       A **category** describes topics and subjects dealt in a course (it can have sub-categories).                        |
+| 5.  |   `Module`    |       Entity       |                              `Exam`, `Course` and `Lecture`                               |                                          A **module** is a set of lectures that forms a course.                                           |
+| 6.  |    `Exam`     |       Entity       |                                         `Module`                                          |                                 **Exams** can be accessed when a module has been finished in the course.                                  |
+| 7.  |   `Lecture`   |       Entity       |                                  `Module` and `Resource`                                  |                              An online **lecture** is a subset of a module, and is teached by one professor.                              |
+| 8.  |  `Resource`   | ISA-Generalisation |                                         `Lecture`                                         | A **resource** is provided by the professor for the lectures. It can be either `Video` recordings, `Audio` tracks, or simple `Documents`. |
+| 9.  | `Assignment`  |       Entity       |                                  `Course` and `Student`                                   |                   An **assignment** is a task for a given course, that a student enrolled in such a course must submit.                   |
+| 10. | `Certificate` |    Weak-Entity     |                                  `Course` and `Student`                                   |                                A **certificate** is a document that certifies the completion of a course.                                 |
